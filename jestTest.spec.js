@@ -1,5 +1,9 @@
-const convertText = require("./script.js");
+const doUpper = require("./script.js");
 
-test("converter test", () => {
-    expect(convertText("hej")).toBe("HEJ");    
+
+describe("My test suite", () => {
+  test("converter test", () => {
+    expect(doUpper("hej")).toBe("HEJ");
+        
+    });
 });

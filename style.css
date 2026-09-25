@@ -13,7 +13,7 @@ body {
 }
 
 /* main heading */
-h1 {
+#mainHeading {
     color: rgba(205, 205, 205, 0.7);
     background: rgba(75, 78, 159, 0.314);
     text-align: center;
@@ -27,29 +27,24 @@ hr {
     border-image: url("border.png") 10 round;
 }
 
-/* list items */
-#taskList li {
+/* text list items */
+.convertedText {
     position: relative;
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 20px;
-    padding: 3px;        
-}
-
-/* list items (contents only) */
-#taskList li span {
-    cursor: pointer; /* make the text of the tasks have a pointer cursor, only applies to the text and not the full width of the page in front of the tasks */
-    padding: 4px;
+    padding: 3px; 
     margin: 4px;
     border-radius: 5px 10px;
+    cursor: pointer; /* make the text of the tasks have a pointer cursor, only applies to the text and not the full width of the page in front of the tasks */    
 }
 
-/* make the task items have zebra stripes */
-#taskList li:nth-child(odd) span {
+/* make the text list items have zebra stripes */
+.convertedText:nth-child(odd) {
     background-color: rgba(77, 75, 159, 0.324);
 }
-#taskList li:nth-child(even) span {
+.convertedText:nth-child(even) {
     background-color: rgba(75, 107, 159, 0.324);
 }
 
@@ -66,8 +61,8 @@ hr {
     color: rgba(205, 205, 205, 0.9);
 }
 
-/* add task button */
-#addTaskBtn {
+/* convert buttons */
+#convertUpperBtn, #convertLowerBtn {
     cursor: pointer;
     transition: 0.3s;
     background-color: rgb(55, 55, 55);
@@ -75,13 +70,13 @@ hr {
     padding: 2px 15px;
     border-radius: 25px;
 }
-#addTaskBtn:hover {
+#convertUpperBtn:hover, #convertLowerBtn:hover {
     background-color:rgba(77, 75, 159, 0.7);
     color: rgba(205, 205, 205, 0.9);
 }
 
-/* task input box */
-#taskInput {
+/* input box */
+#inputBox {
     width: 20%;
     min-width: 250px;
     max-width: 400px;
@@ -91,49 +86,8 @@ hr {
     padding: 2px;
 }
 
-/* completed list items */
-.completed {
-    text-decoration: line-through;
-    color: rgb(117, 116, 116);
-}
-
 /* warning message */
 #warningMsg { 
     font-size: 0.85rem;
     color: red;
-}
-
-/* add a checkmark to list items */
-#taskList li::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  border: 2px solid #555;
-  border-radius: 3px;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.completed::before {
-  background-color: #363636;
-  border-color: #292929;
-}
-/* adjust the left and top to position the checkmark */
-.completed::after {
-  content: "";
-  position: absolute;
-  left: 10px;   
-  top: 14px;
-  width: 5px;
-  height: 10px;
-  border: solid rgb(79, 176, 214);
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  cursor: pointer;
-}
-
-/* completed text section */
-#numOfCompletesText {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
 }

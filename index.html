@@ -8,14 +8,15 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Case Converter</h1>
+    <h1 id="mainHeading">Case Converter</h1>
     <hr>
 
-    <label for="input">Convert your text to Uppercase</label><br>
+    <br><label for="inputBox">Convert your text!</label><br><br>
     <input type="text" id="inputBox" placeholder="Type your text...">
-    <button type="button" id="convertBtn">To Uppercase</button>
+    <button type="button" id="convertUpperBtn">TO UPPERCASE</button>
+    <button type="button" id="convertLowerBtn">to lowercase</button>
     <span id="warningMsg"></span>
 
-    <ul id="convertedText"></ul>    
+    <ul id="textList"></ul>    
 </body>
 </html>
