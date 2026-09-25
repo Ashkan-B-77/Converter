@@ -37,7 +37,8 @@ hr {
     padding: 3px; 
     margin: 4px;
     border-radius: 5px 10px;
-    cursor: pointer; /* make the text of the tasks have a pointer cursor, only applies to the text and not the full width of the page in front of the tasks */    
+    cursor: pointer;
+    width: fit-content;
 }
 
 /* make the text list items have zebra stripes */
