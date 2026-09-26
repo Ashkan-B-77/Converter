@@ -20,16 +20,17 @@ function doUpper(){
     }
     elWarningMsg.textContent = ""; // Clears the warning message if text is added. 
 
+    const upperResult = convertToUpper(inputText); // calls on the function "convertToUpper", which in turn converts the text and console.logs it.
+    elInputBox.value = upperResult; // converts the text in the input.
+
     // -------------------- Creation of converted text. If you don't create a span element then the copy button will copy the entire li --------------------
     const newItem = document.createElement("li"); // Creates a variable with the job of creating text list items (in memory).
     elTextList.appendChild(newItem); // adds the created empty <li> inside of the empty html <ul> tag.
 
     const newTextSpan = document.createElement("span"); // creates a variable with the job of creating span elements (in memory).
-    newTextSpan.textContent = inputText.toUpperCase(); // converts the span text to uppercase.
-    elInputBox.value = elInputBox.value.toUpperCase(); // converts the text in the input to uppercase.
+    newTextSpan.textContent = upperResult; // reuse the upperResult value created from "convertToUpper" function for the span elements.
     newItem.appendChild(newTextSpan); // adds the span elements to the <li>.
     newItem.setAttribute("class", "convertedText");
-    console.log(inputText.toUpperCase()); // print the result to console log (can see the result in the console section of dev tools after you convert).
 
     // -------------------- Creation of a delete button for the text list items --------------------
     const newDeleteBtn = document.createElement("button"); // creates a variable with the job of creating a button element (in memory).
@@ -52,8 +53,8 @@ function doUpper(){
     });
 }
 
-// ---------------------------------------- For lower ----------------------------------------
-function doLower(){
+// ---------------------------------------- For Lower ----------------------------------------
+function doUpper(){
     const inputText = elInputBox.value; 
 
     // -------------------- Warning message if empty input box --------------------
@@ -63,16 +64,17 @@ function doLower(){
     }
     elWarningMsg.textContent = ""; 
 
-    // -------------------- Creation of converted text. If you don't create a span element then the copy button will copy the entire li --------------------
+    const lowerResult = convertToLower(inputText); // calls on the function "convertToLower", which in turn converts the text and console.logs it.
+    elInputBox.value = lowerResult; // converts the text in the input.
+
+    // -------------------- Creation of converted text --------------------
     const newItem = document.createElement("li");
     elTextList.appendChild(newItem); 
 
-    const newTextSpan = document.createElement("span");
-    newTextSpan.textContent = inputText.toLowerCase(); // converts the span text to lowercase.
-    elInputBox.value = elInputBox.value.toLowerCase(); // converts the text in the input to lowercase.
-    newItem.appendChild(newTextSpan);
+    const newTextSpan = document.createElement("span"); 
+    newTextSpan.textContent = lowerResult; // reuse the lowerResult value created from "convertToLower" function for the span elements.
+    newItem.appendChild(newTextSpan); 
     newItem.setAttribute("class", "convertedText");
-    console.log(inputText.toLowerCase()); // print the result to console log (can see the result in the console section of dev tools after you convert).
 
     // -------------------- Creation of a delete button for the text list items --------------------
     const newDeleteBtn = document.createElement("button"); 
@@ -80,8 +82,8 @@ function doLower(){
     newDeleteBtn.setAttribute("class", "deleteBtn"); 
     newItem.appendChild(newDeleteBtn); 
 
-    newDeleteBtn.addEventListener("click", function () { 
-        newItem.remove();       
+    newDeleteBtn.addEventListener("click", function () {
+        newItem.remove();     
     });
 
     // -------------------- Creation of a copy button for the text list items --------------------
@@ -95,5 +97,18 @@ function doLower(){
     });
 }
 
+// ---------------------------------------- For Jest test ----------------------------------------
+function convertToUpper(text) {
+    const result = text.toUpperCase();
+    console.log(result);
+    return result;
+}
+
+function convertToLower(text) {
+    const result = text.toLowerCase();
+    console.log(result);
+    return result;
+}
+
 // export the functions in this file to be used in the jestTest.spec.js file
-module.exports = {doUpper, doLower};
+module.exports = {convertToUpper, convertToLower};
