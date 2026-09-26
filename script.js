@@ -54,7 +54,7 @@ function doUpper(){
 }
 
 // ---------------------------------------- For Lower ----------------------------------------
-function doUpper(){
+function doLower(){
     const inputText = elInputBox.value; 
 
     // -------------------- Warning message if empty input box --------------------
@@ -97,18 +97,3 @@ function doUpper(){
     });
 }
 
-// ---------------------------------------- For Jest test ----------------------------------------
-function convertToUpper(text) {
-    const result = text.toUpperCase();
-    console.log(result);
-    return result;
-}
-
-function convertToLower(text) {
-    const result = text.toLowerCase();
-    console.log(result);
-    return result;
-}
-
-// export the functions in this file to be used in the jestTest.spec.js file
-module.exports = {convertToUpper, convertToLower};
