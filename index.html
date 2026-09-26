@@ -11,10 +11,14 @@
     <h1 id="mainHeading">Case Converter</h1>
     <hr>
 
-    <br><label for="inputBox">Convert your text!</label><br><br>
-    <input type="text" id="inputBox" placeholder="Type your text...">
-    <button type="button" id="convertUpperBtn">TO UPPERCASE</button>
-    <button type="button" id="convertLowerBtn">to lowercase</button>
+    <div id="inputArea"> <!-- wrap the input and buttons in div elements so you can adjust the buttons' position -->
+        <textarea id="inputBox" placeholder="Type or paste your text..."></textarea> <!-- use textarea instead of input for large text inputs -->
+        <div id="buttonArea">
+            <button type="button" id="convertUpperBtn">TO UPPERCASE</button>
+            <button type="button" id="convertLowerBtn">to lowercase</button>
+        </div>
+    </div>
+
     <span id="warningMsg"></span>
 
     <ul id="textList"></ul>    
