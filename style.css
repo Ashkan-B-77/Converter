@@ -6,7 +6,7 @@ body {
     margin: 0;
     min-height: 100vh;
     border: 10px solid transparent; 
-    border-image: url("border.png") 10;
+    border-image: url("images/border.png") 10;
 }
 * {
     box-sizing: border-box;
@@ -24,7 +24,7 @@ body {
 /* <hr> */
 hr {
     margin: 0;
-    border-image: url("border.png") 10 round;
+    border-image: url("images/border.png") 10 round;
 }
 
 /* text list items */
